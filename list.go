@@ -1,12 +1,13 @@
-package linkedlist
+package clist
 
 import (
-	"linkedlist/linkedlist"
 	"strconv"
 	"strings"
 	"sync"
 	"sync/atomic"
 	"unsafe"
+
+	"github.com/tristoney/clist/list"
 )
 
 type IntList struct {
@@ -41,7 +42,7 @@ func (n *intNode) isMakred() bool {
 	return atomic.LoadUint32(&n.marked) == 1
 }
 
-func NewIntList() linkedlist.Linkedlist {
+func NewIntList() list.Linkedlist {
 	return &IntList{head: newIntNode(0)}
 }
 

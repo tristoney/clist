@@ -1,9 +1,10 @@
-package linkedlist
+package clist
 
 import (
-	"linkedlist/simplelist"
 	"math"
 	"testing"
+
+	"github.com/tristoney/clist/simplelist"
 )
 
 const randN = math.MaxUint32

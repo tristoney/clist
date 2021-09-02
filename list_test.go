@@ -1,13 +1,14 @@
-package linkedlist
+package clist
 
 import (
 	"fmt"
-	"linkedlist/linkedlist"
-	"linkedlist/simplelist"
+	"github.com/tristoney/clist/list"
 	"sync"
 	"sync/atomic"
 	"testing"
 	_ "unsafe"
+
+	"github.com/tristoney/clist/simplelist"
 )
 
 //go:linkname fastrand runtime.fastrand
@@ -18,7 +19,7 @@ func fastrandn(n uint32) uint32 {
 	return uint32(uint64(fastrand()) * uint64(n) >> 32)
 }
 
-func testLinkedList(t *testing.T, f func() linkedlist.Linkedlist) {
+func testLinkedList(t *testing.T, f func() list.Linkedlist) {
 	// correctness test
 	l := f()
 	if l.Len() != 0 {

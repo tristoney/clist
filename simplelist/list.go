@@ -1,10 +1,11 @@
 package simplelist
 
 import (
-	"linkedlist/linkedlist"
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/tristoney/clist/list"
 )
 
 type IntList struct {
@@ -22,7 +23,7 @@ func newIntNode(value int) *intNode {
 	return &intNode{value: value}
 }
 
-func NewIntList() linkedlist.Linkedlist {
+func NewIntList() list.LinkedList {
 	return &IntList{head: newIntNode(0), length: 0}
 }
 

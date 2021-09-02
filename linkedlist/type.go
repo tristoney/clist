@@ -1,6 +1,6 @@
-package linkedlist
+package list
 
-type Linkedlist interface {
+type LinkedList interface {
 	Insert(int) bool
 	Delete(int) bool
 	Contains(int) bool
