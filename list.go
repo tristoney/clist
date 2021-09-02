@@ -42,7 +42,7 @@ func (n *intNode) isMakred() bool {
 	return atomic.LoadUint32(&n.marked) == 1
 }
 
-func NewIntList() list.Linkedlist {
+func NewIntList() list.LinkedList {
 	return &IntList{head: newIntNode(0)}
 }
 

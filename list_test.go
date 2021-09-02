@@ -2,11 +2,12 @@ package clist
 
 import (
 	"fmt"
-	"github.com/tristoney/clist/list"
 	"sync"
 	"sync/atomic"
 	"testing"
 	_ "unsafe"
+
+	"github.com/tristoney/clist/list"
 
 	"github.com/tristoney/clist/simplelist"
 )
@@ -19,7 +20,7 @@ func fastrandn(n uint32) uint32 {
 	return uint32(uint64(fastrand()) * uint64(n) >> 32)
 }
 
-func testLinkedList(t *testing.T, f func() list.Linkedlist) {
+func testLinkedList(t *testing.T, f func() list.LinkedList) {
 	// correctness test
 	l := f()
 	if l.Len() != 0 {
